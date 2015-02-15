@@ -11,6 +11,23 @@
         "javax.jdo.option.ConnectionPassword": "hive",
         "hive.execution.engine" : "tez"
       }
+    },
+    {
+      "yarn-site": {
+        "yarn.nodemanager.resource.memory-mb": "8192",
+        "yarn.scheduler.maximum-allocation-mb": "8192",
+        "yarn.scheduler.minimum-allocation-mb": "4096"
+    }
+    },
+    {
+      "mapred-site": {
+        "mapreduce.map.java.opts": "-Xmx3277m",
+        "mapreduce.map.memory.mb": "4096",
+        "mapreduce.reduce.java.opts": "-Xmx6554m",
+        "mapreduce.reduce.memory.mb": "8192",
+        "yarn.app.mapreduce.am.command-opts": "-Xmx6554m",
+        "yarn.app.mapreduce.am.resource.mb": "8192"
+      }
     }
   ],
   "host_groups": [
