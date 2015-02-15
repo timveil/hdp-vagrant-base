@@ -6,7 +6,7 @@
       "name" : "host_group_1",
       "hosts" : [
         {
-          "fqdn" : "min.hdp.local"
+          "fqdn" : "all.hdp.local"
         }
       ]
     }

@@ -2,20 +2,20 @@ Vagrant.configure("2") do |config|
 	config.vm.box = "chef/centos-6.6"
 
 	# bootstrap and cleanup box
-	config.vm.provision "bootstrap", type: "shell", path: "bootstrap.sh"
+	config.vm.provision "bootstrap", type: "shell", path: "provision-bootstrap.sh"
 
     # install Ambari
-	config.vm.provision "ambari", type: "shell", path: "ambari.sh"
+	config.vm.provision "ambari", type: "shell", path: "provision-ambari.sh"
 
 	# install cluster: min.sh or all.sh
-	config.vm.provision "cluster", type: "shell", path: "min.sh"
+	config.vm.provision "cluster", type: "shell", path: "provision-min.sh"
 
 	config.vm.hostname = "min.hdp.local"
 
-	config.vm.network "private_network", ip: "192.168.66.101"
+	config.vm.network "private_network", ip: "192.168.2.101"
 
     # automatically update /etc/hosts files on host and guest
-    config.multihostsupdater.aliases = ["hdp2201"]
+    config.multihostsupdater.aliases = ["min"]
 
     # do NOT download the iso file from a webserver
     config.vbguest.no_remote = true
