@@ -8,7 +8,7 @@ echo 'installing ambari-server and ambari-agent'
 yum install ambari-server ambari-agent -y -q
 
 # update ambari agent config
-sed -i 's/^hostname=localhost/hostname=hdp2201.dev.local/g' /etc/ambari-agent/conf/ambari-agent.ini
+sed -i 's/^hostname=localhost/hostname=min.hdp.local/g' /etc/ambari-agent/conf/ambari-agent.ini
 
 # setup ambari server
 ambari-server setup -s

@@ -10,7 +10,7 @@ Vagrant.configure("2") do |config|
 	# install cluster: min.sh or all.sh
 	config.vm.provision "cluster", type: "shell", path: "min.sh"
 
-	config.vm.hostname = "hdp2201.dev.local"
+	config.vm.hostname = "min.hdp.local"
 
 	config.vm.network "private_network", ip: "192.168.66.101"
 
@@ -23,6 +23,6 @@ Vagrant.configure("2") do |config|
 	config.vm.provider "virtualbox" do |v|
 		v.memory = 8192
 		v.cpus = 4
-		v.name = "hdpv2201.dev.local"
+		v.name = "min.hdp.local"
 	end
 end
