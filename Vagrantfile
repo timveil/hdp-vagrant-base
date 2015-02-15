@@ -3,6 +3,9 @@ Vagrant.configure("2") do |config|
 	
 	config.vm.provision :shell, path: "bootstrap.sh"
 
+	# replace based on cluster pref min, all, etc
+	config.vm.provision :shell, path: "min.sh"
+
 	config.vm.hostname = "hdp2201.dev.local"
 
 	config.vm.network "private_network", ip: "192.168.66.101"
