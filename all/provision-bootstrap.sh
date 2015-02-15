@@ -22,4 +22,4 @@ echo never > /sys/kernel/mm/transparent_hugepage/enabled
 
 # disable SElinux as required by HDP
 echo 'disabling SELinux'
-sed -i 's/^SELINUX=.*/SELINUX=disabled/g' /etc/sysconfig/selinux
+sed -i "s/^SELINUX=.*/SELINUX=disabled/g" /etc/sysconfig/selinux
