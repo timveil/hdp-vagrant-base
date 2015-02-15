@@ -3,11 +3,11 @@ HOSTNAME = "all.hdp.local"
 Vagrant.configure("2") do |config|
   config.vm.box = "chef/centos-6.6"
 
-  config.vm.provision "bootstrap", type: "shell", path: "provision-bootstrap.sh"
+  config.vm.provision "base", type: "shell", path: "provision-base.sh"
 
   config.vm.provision "ambari", type: "shell", path: "provision-ambari.sh", args: HOSTNAME
 
-  config.vm.provision "cluster", type: "shell", path: "provision-all.sh"
+  config.vm.provision "cluster", type: "shell", path: "provision-cluster.sh"
 
   config.vm.hostname = HOSTNAME
 
