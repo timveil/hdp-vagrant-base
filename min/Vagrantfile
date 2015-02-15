@@ -17,7 +17,7 @@ Vagrant.configure("2") do |config|
 
   config.vbguest.no_remote = true
 
-  config.vbguest.auto_update = false
+  config.vbguest.auto_update = true
 
   config.vm.provider "virtualbox" do |v|
     v.memory = 8192
