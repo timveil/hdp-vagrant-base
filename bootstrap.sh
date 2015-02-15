@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 
-# copy hosts file to new image
-cp /vagrant/hosts /etc/hosts
-
 # clean yum
 yum clean all
 

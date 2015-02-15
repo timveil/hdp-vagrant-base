@@ -14,9 +14,15 @@ Vagrant.configure("2") do |config|
 
 	config.vm.network "private_network", ip: "192.168.66.101"
 
+    # automatically update /etc/hosts files on host and guest
+    config.multihostsupdater.aliases = ["hdp2201"]
+
+    # do NOT download the iso file from a webserver
+    config.vbguest.no_remote = true
+
 	config.vm.provider "virtualbox" do |v|
 		v.memory = 8192
 		v.cpus = 4
-		v.name = "hdp2201.dev.local"
+		v.name = "hdpv2201.dev.local"
 	end
 end
