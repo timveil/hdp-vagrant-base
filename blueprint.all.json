@@ -15,7 +15,7 @@
   ],
   "host_groups": [
     {
-      "name": "master",
+      "name": "host_group_1",
       "configurations": [],
       "components": [
         {"name": "AMBARI_SERVER"},

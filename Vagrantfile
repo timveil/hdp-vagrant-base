@@ -1,10 +1,14 @@
 Vagrant.configure("2") do |config|
 	config.vm.box = "chef/centos-6.6"
-	
-	config.vm.provision :shell, path: "bootstrap.sh"
 
-	# replace based on cluster pref min, all, etc
-	config.vm.provision :shell, path: "min.sh"
+	# bootstrap and cleanup box
+	config.vm.provision "bootstrap", type: "shell", path: "bootstrap.sh"
+
+    # install Ambari
+	config.vm.provision "ambari", type: "shell", path: "ambari.sh"
+
+	# install cluster: min.sh or all.sh
+	config.vm.provision "cluster", type: "shell", path: "min.sh"
 
 	config.vm.hostname = "hdp2201.dev.local"
 
