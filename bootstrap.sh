@@ -4,17 +4,22 @@
 yum clean all
 
 # update all yum libraries
-yum update -y
+echo 'updating all libraries'
+yum update -y -q
 
 # install & start ntp as required by HDP
-yum install ntp -y
+echo 'installing ntp'
+yum install ntp -y -q
 service ntpd start
 
 # disable iptables as required by HDP
+echo 'disabling iptables'
 service iptables stop
 
 # disable transparent huge pages as required by HDP
+echo 'disabling transparent huge pages'
 echo never > /sys/kernel/mm/transparent_hugepage/enabled
 
 # disable SElinux as required by HDP
+echo 'disabling SELinux'
 sed -i 's/^SELINUX=.*/SELINUX=disabled/g' /etc/sysconfig/selinux
