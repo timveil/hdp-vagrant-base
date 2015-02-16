@@ -27,6 +27,10 @@ Vagrant.configure("2") do |config|
 
   config.multihostsupdater.aliases = {IP => [HOSTNAME]}
 
+  config.vbguest.no_remote = true
+
+  config.vbguest.no_install = true
+
   config.vm.provider "virtualbox" do |v|
     v.memory = 8192
     v.cpus = 4

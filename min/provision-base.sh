@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-/opt/VBoxGuestAdditions-*/uninstall.sh
-
 # clean yum
 yum clean all
 
