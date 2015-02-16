@@ -42,7 +42,7 @@ Each flavor contains the following files:
 
 * blueprint.json - use this file to customize the services included in your cluster
 * create-cluster.json - this file is used to request cluster creation.  you can change the name of the cluster here
-```bash
+```json
 {
   "blueprint" : "all",
   "default_password" : "password",
