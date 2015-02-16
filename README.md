@@ -7,6 +7,9 @@ Currently I have 2 flavors, but will be adding more.
 
 * all - This includes all HDP 2.2 services
 * min - This includes the minimum required HDFS services + Hive
+* streaming - Coming soon!  Includes `min` + Storm, Kafka and Solr
+* nosql - Coming soon! Includes `min` + HBase (Phoenix)
+
 
 ## Requirements
 
@@ -35,7 +38,35 @@ Open a terminal, navigate to the root of the project and have fun:
 
 ## Customizing
 
+Each flavor contains the following files:
 
+* blueprint.json - use this file to customize the services included in your cluster
+* create-cluster.json - this file is used to request cluster creation.  you can change the name of the cluster here
+```bash
+{
+  "blueprint" : "all",
+  "default_password" : "password",
+  "host_groups" :[
+    {
+      "name" : "host_group_1",
+      "hosts" : [
+        {
+          "fqdn" : "all.hdp.local"
+        }
+      ]
+    }
+  ]
+}
+```
+* provision-ambari.sh - a vagrant provisioner to install and start the Ambari Server and Agent
+* provision-base.sh - a vagrant provisioner to prepare the virtual box. for example, this script disables SELinux and iptables
+* provision-cluster - responsible for creating the Ambari Blueprint and requesting cluster creation
+* Vagrantfile - the Vagrant configuration file that defines box creation.  Most customization can be done here.
+```bash
+# the top of the file includes the following variables which can be changed if needed
+HOSTNAME = "all.hdp.local"
+IP = "192.168.66.101"
+```
 
 ### Ambari Blueprint
 
@@ -45,23 +76,23 @@ Service  | Required Components
 -------- | ----------
 HDFS | DATANODE, HDFS_CLIENT, NAMENODE, SECONDARY_NAMENODE
 YARN | APP_TIMELINE_SERVER, NODEMANAGER, RESOURCEMANAGER, YARN_CLIENT
-MAPREDUCE2 | HISTORYSERVER, MAPREDUCE2_CLIENT
-GANGLIA | GANGLIA_MONITOR, GANGLIA_SERVER
-HBASE | HBASE_CLIENT, HBASE_MASTER, HBASE_REGIONSERVER
-HIVE | HIVE_CLIENT, HIVE_METASTORE, HIVE_SERVER, MYSQL_SERVER
-HCATALOG | HCAT
-WEBHCAT | WEBHCAT_SERVER
-NAGIOS | NAGIOS_SERVER
-OOZIE | OOZIE_CLIENT, OOZIE_SERVER
-PIG | PIG
-SQOOP | SQOOP
-STORM | DRPC_SERVER, NIMBUS, STORM_UI_SERVER, SUPERVISOR
-KAFKA | KAFKA_BROKER
-TEZ | TEZ_CLIENT
-FALCON | FALCON_CLIENT, FALCON_SERVER
-ZOOKEEPER | ZOOKEEPER_CLIENT, ZOOKEEPER_SERVER
-FLUME | FLUME_HANDLER
-SLIDER | SLIDER
-KNOX | KNOX_GATEWAY
-AMBARI | AMBARI_SERVER
+MapReduce2 | HISTORYSERVER, MAPREDUCE2_CLIENT
+Ganglia | GANGLIA_MONITOR, GANGLIA_SERVER
+HBase | HBASE_CLIENT, HBASE_MASTER, HBASE_REGIONSERVER
+Hive | HIVE_CLIENT, HIVE_METASTORE, HIVE_SERVER, MYSQL_SERVER
+HCatalog | HCAT
+WebHCat | WEBHCAT_SERVER
+Nagios| NAGIOS_SERVER
+Oozie| OOZIE_CLIENT, OOZIE_SERVER
+Pig | PIG
+Sqoop | SQOOP
+Storm | DRPC_SERVER, NIMBUS, STORM_UI_SERVER, SUPERVISOR
+Kafka | KAFKA_BROKER
+Tez | TEZ_CLIENT
+Falcon | FALCON_CLIENT, FALCON_SERVER
+Zookeeper | ZOOKEEPER_CLIENT, ZOOKEEPER_SERVER
+Flume | FLUME_HANDLER
+Slider | SLIDER
+Knox | KNOX_GATEWAY
+Ambari | AMBARI_SERVER
 
