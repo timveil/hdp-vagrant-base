@@ -1,5 +1,16 @@
 # hdp-vagrant
-vagrant file for HDP 2.2 single node cluster
+Use this project to spin up local, clean, purpose built single node HDP clusters.  This is an alternative to the "sandbox" approach which installs everything.  This project uses Vagrant, Oracle VirtulBox and Ambari Blueprints to create clusters that run only the services you need.
+
+Currently I have 2 flavors, but will be adding more.
+
+* all - This includes all HDP 2.2 services
+* min - This includes the minimum required HDFS services + Hive
+
+
+
+## Ambari Blueprint
+
+You can configure your `Blueprint` by referring to the following table
 
 Service  | Components
 -------- | ----------
