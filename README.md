@@ -40,8 +40,8 @@ Open a terminal, navigate to the root of the project and have fun:
 
 Each flavor contains the following files:
 
-* blueprint.json - use this file to customize the services included in your cluster
-* create-cluster.json - this file is used to request cluster creation.  you can change the name of the cluster here
+* `blueprint.json` - use this file to customize the services included in your cluster
+* `create-cluster.json` - this file is used to request cluster creation.  you can change the name of the cluster here
 ```json
 {
   "blueprint" : "all",
@@ -58,10 +58,10 @@ Each flavor contains the following files:
   ]
 }
 ```
-* provision-ambari.sh - a vagrant provisioner to install and start the Ambari Server and Agent
-* provision-base.sh - a vagrant provisioner to prepare the virtual box. for example, this script disables SELinux and iptables
-* provision-cluster - responsible for creating the Ambari Blueprint and requesting cluster creation
-* Vagrantfile - the Vagrant configuration file that defines box creation.  Most customization can be done here.
+* `provision-ambari.sh` - a vagrant provisioner to install and start the Ambari Server and Agent
+* `provision-base.sh` - a vagrant provisioner to prepare the virtual box. for example, this script disables SELinux and iptables
+* `provision-cluster` - responsible for creating the Ambari Blueprint and requesting cluster creation
+* `Vagrantfile` - the Vagrant configuration file that defines box creation.  Most customization can be done here.
 ```bash
 # the top of the file includes the following variables which can be changed if needed
 HOSTNAME = "all.hdp.local"
