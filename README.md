@@ -1,18 +1,47 @@
-# hdp-vagrant
-Use this project to spin up local, clean, purpose built single node HDP 2.2 clusters.  This is an alternative to the "sandbox" approach which installs everything.  This project uses Vagrant, Oracle VirtulBox and Ambari Blueprints to create clusters that run only the services you need.
+# HDP Vagrant
+
+## About
+Use this project to spin up local, clean, purpose built single node HDP 2.2 clusters.  This is an alternative to the "sandbox" approach which installs everything.  This is very useful if the configuration of your local cluster needs to change from one project to another.  In addition, because it leverages Vagrant, its very easy to extend and customize.
 
 Currently I have 2 flavors, but will be adding more.
 
 * all - This includes all HDP 2.2 services
 * min - This includes the minimum required HDFS services + Hive
 
+## Requirements
+
+The following software is required:
+
+* [Vagrant](https://www.vagrantup.com/)
+* [VirtualBox](https://www.virtualbox.org/)
+
+The boxes are configured to use 4 cores and 8gb of RAM, this means that unless you change, your workstation should have 8 cores and 16gb of RAM.
+
+## Getting Started
+
+Open a terminal, navigate to the root of the project and have fun:
+
+```bash
+# install required plugins
+> vagrant plugin install vagrant-multi-hostsupdater
+> vagrant plugin install vagrant-vbguest
+
+# pick a flavor by changing into its directory
+> cd min
+
+# launch the vm (may take 10 to 20 minuets)
+> vagrant up
+```
+
+## Customizing
 
 
-## Ambari Blueprint
+
+### Ambari Blueprint
 
 You can configure your `Blueprint` by referring to the following table
 
-Service  | Components
+Service  | Required Components
 -------- | ----------
 HDFS | DATANODE, HDFS_CLIENT, NAMENODE, SECONDARY_NAMENODE
 YARN | APP_TIMELINE_SERVER, NODEMANAGER, RESOURCEMANAGER, YARN_CLIENT
