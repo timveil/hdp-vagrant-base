@@ -27,7 +27,6 @@ Open a terminal, navigate to the root of the project and have fun:
 ```bash
 # install required plugins
 > vagrant plugin install vagrant-multi-hostsupdater
-> vagrant plugin install vagrant-vbguest
 
 # pick a flavor by changing into its directory
 > cd min
