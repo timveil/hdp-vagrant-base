@@ -9,7 +9,7 @@ yum update -y -q
 
 # install & start ntp as required by HDP
 echo 'installing ntp'
-yum install ntp -y -q
+yum install ntp lsof -y -q
 service ntpd start
 
 # disable iptables as required by HDP

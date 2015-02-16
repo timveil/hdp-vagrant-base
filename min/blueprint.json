@@ -28,6 +28,11 @@
         "yarn.app.mapreduce.am.command-opts": "-Xmx6554m",
         "yarn.app.mapreduce.am.resource.mb": "8192"
       }
+    },
+    {
+      "hdfs-site" : {
+        "dfs.replication" : "1"
+      }
     }
   ],
   "host_groups": [
