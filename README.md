@@ -1,7 +1,7 @@
 # HDP Vagrant
 
 ## About
-Use this project to spin up local, clean, purpose built single node Hortonworks Data Platform (HDP) 2.2 clusters.  This is an alternative to the "sandbox" approach which installs everything.  This is very useful if the configuration of your local cluster needs to change from one project to another.  In addition, because it leverages Vagrant, its very easy to extend and customize.
+Use this project to spin up local, clean, purpose built single node [Hortonworks Data Platform](http://hortonworks.com/hdp/) (HDP) 2.2 clusters.  This is an alternative to the "sandbox" approach which installs everything.  This is very useful if the configuration of your local cluster needs to change from one project to another.  In addition, because it leverages Vagrant, its very easy to extend and customize.
 
 Currently I have 2 flavors, but will be adding more.
 
