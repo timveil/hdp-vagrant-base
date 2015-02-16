@@ -60,7 +60,7 @@ Each flavor contains the following files:
 ```
 * `provision-ambari.sh` - a vagrant provisioner to install and start the Ambari Server and Agent
 * `provision-base.sh` - a vagrant provisioner to prepare the virtual box. for example, this script disables SELinux and iptables
-* `provision-cluster` - responsible for creating the Ambari Blueprint and requesting cluster creation
+* `provision-cluster.sh` - responsible for creating the Ambari Blueprint and requesting cluster creation
 * `Vagrantfile` - the Vagrant configuration file that defines box creation.  Most customization can be done here.
 ```bash
 # the top of the file includes the following variables which can be changed if needed
