@@ -2,11 +2,11 @@
 
 echo "HOSTNAME = $1"
 
-BLUEPRINT_URL="http://$1:8080/api/v1/blueprints/min"
+BLUEPRINT_URL="http://$1:8080/api/v1/blueprints/secure"
 
 echo $BLUEPRINT_URL
 
-CLUSTER_URL="http://$1:8080/api/v1/clusters/min"
+CLUSTER_URL="http://$1:8080/api/v1/clusters/secure"
 
 echo $CLUSTER_URL
 

@@ -1,4 +1,4 @@
-HOSTNAME = "min.hdp.local"
+HOSTNAME = "secure.hdp.local"
 IP = "192.168.66.101"
 
 $hostsFile = <<SCRIPT
@@ -27,7 +27,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.box_check_update = false
 
-  config.vm.provision "hosts", type: "shell", inline: $hostsFile, args: [IP, HOSTNAME]
+  config.vm.provision "hosts", type:  "shell", inline: $hostsFile, args: [IP, HOSTNAME]
 
   config.vm.provision "java", type:  "shell", inline: $installJava
 
@@ -36,6 +36,8 @@ Vagrant.configure("2") do |config|
   config.vm.provision "ambari", type: "shell", path: "provision-ambari.sh", args: [HOSTNAME]
 
   config.vm.provision "cluster", type: "shell", path: "provision-cluster.sh", args: [HOSTNAME]
+
+  config.vm.provision "ranger", type: "shell", path: "provision-ranger.sh", args: [HOSTNAME]
 
   config.vm.hostname = HOSTNAME
 

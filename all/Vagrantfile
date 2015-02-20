@@ -10,16 +10,32 @@ $1  $2
 EOF
 SCRIPT
 
+$installJava = <<SCRIPT
+echo "installing java jdk..."
+
+yum install java-1.7.0-openjdk-devel -y -q
+
+echo "exporting path variables..."
+
+echo "export JAVA_HOME=/usr/lib/jvm/java-1.7.0-openjdk-1.7.0.75.x86_64" >> /home/vagrant/.bashrc
+echo "PATH=$JAVA_HOME/bin:$PATH" >> /home/vagrant/.bashrc
+
+SCRIPT
+
 Vagrant.configure("2") do |config|
   config.vm.box = "chef/centos-6.6"
 
-  config.vm.provision "shell", inline: $hostsFile, args: [IP, HOSTNAME]
+  config.vm.box_check_update = false
+
+  config.vm.provision "hosts", type: "shell", inline: $hostsFile, args: [IP, HOSTNAME]
+
+  config.vm.provision "java", type:  "shell", inline: $installJava
 
   config.vm.provision "base", type: "shell", path: "provision-base.sh"
 
   config.vm.provision "ambari", type: "shell", path: "provision-ambari.sh", args: [HOSTNAME]
 
-  config.vm.provision "cluster", type: "shell", path: "provision-cluster.sh"
+  config.vm.provision "cluster", type: "shell", path: "provision-cluster.sh", args: [HOSTNAME]
 
   config.vm.hostname = HOSTNAME
 

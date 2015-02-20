@@ -3,12 +3,13 @@
 ## About
 Use this project to spin up local, clean, purpose built single node [Hortonworks Data Platform](http://hortonworks.com/hdp/) (HDP) 2.2 clusters.  This is an alternative to the "sandbox" approach which installs everything.  This is very useful if the configuration of your local cluster needs to change from one project to another.  In addition, because it leverages Vagrant, its very easy to extend and customize.
 
-Currently I have 2 flavors, but will be adding more.
+Currently I have 3 flavors, but will be adding more.
 
-* all - This includes all HDP 2.2 services
-* min - This includes the minimum required HDFS services + Hive
-* streaming - Coming soon!  Includes `min` + Storm, Kafka and Solr
-* nosql - Coming soon! Includes `min` + HBase (Phoenix)
+* all - Includes all HDP 2.2 services
+* min - Includes the minimum required HDFS services + Hive
+* secure - Includes `min` + Knox & Ranger
+* streaming - *Coming soon!*  Includes `min` + Storm, Kafka and Solr
+* nosql - *Coming soon!* Includes `min` + HBase (Phoenix)
 
 
 ## Requirements
