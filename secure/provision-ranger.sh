@@ -25,7 +25,7 @@ yum install ranger_*-admin -y
 
 sed -i "s/^db_password=.*/db_password=$MYSQL_PASSWORD/g" /usr/hdp/*/ranger-admin/install.properties
 sed -i "s/^audit_db_password=.*/audit_db_password=$MYSQL_PASSWORD/g" /usr/hdp/*/ranger-admin/install.properties
-#sed -i "s/localhost/$1/g" /usr/hdp/*/ranger-admin/install.properties
+sed -i "s|^policymgr_external_url=http://localhost:6080|$POLICY_URL|g" /usr/hdp/*/ranger-admin/install.properties
 
 echo "running setup for ranger-admin"
 cd /usr/hdp/*/ranger-admin

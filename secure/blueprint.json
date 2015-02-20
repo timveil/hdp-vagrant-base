@@ -9,7 +9,11 @@
       "hive-site": {
         "javax.jdo.option.ConnectionUserName": "hive",
         "javax.jdo.option.ConnectionPassword": "hive",
-        "hive.execution.engine": "tez"
+        "hive.execution.engine": "tez",
+        "hive.security.authorization.enabled": "true",
+        "hive.security.authorization.manager": "com.xasecure.authorization.hive.authorizer.XaSecureHiveAuthorizerFactory",
+        "hive.security.authenticator.manager": "org.apache.hadoop.hive.ql.security.SessionStateUserAuthenticator",
+        "hive.conf.restricted.list": "hive.security.authorization.enabled,hive.security.authorization.manager,hive.security.authenticator.manager"
       }
     },
     {
@@ -31,7 +35,8 @@
     },
     {
       "hdfs-site" : {
-        "dfs.replication" : "1"
+        "dfs.replication" : "1",
+        "dfs.permissions" : "true"
       }
     }
   ],
