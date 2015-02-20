@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+# fix timezone
+mv /etc/localtime /etc/localtime.bak
+ln -s /usr/share/zoneinfo/America/New_York /etc/localtime
+
 # clean yum
 yum clean all
 
