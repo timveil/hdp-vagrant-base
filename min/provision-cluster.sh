@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-echo "HOSTNAME = $1"
+echo "******* JAVA_HOME = $JAVA_HOME"
+echo "******* HOSTNAME = $1"
 
 BLUEPRINT_URL="http://$1:8080/api/v1/blueprints/min"
 

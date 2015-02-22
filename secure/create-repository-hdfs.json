@@ -1,0 +1,13 @@
+{
+  "name": "hdfsdev",
+  "description": "HDFS Repository",
+  "repositoryType": "hdfs",
+  "config": "{
+    \"username\": \"ranger\",
+    \"password\": \"ranger\",
+    \"fs.default.name\": \"hdfs://secure.hdp.local:8020\",
+    \"hadoop.security.authorization\": \"true\",
+    \"hadoop.security.authentication\": \"simple\"
+  }",
+  "isActive": true
+}
