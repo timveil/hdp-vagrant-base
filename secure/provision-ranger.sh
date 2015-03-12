@@ -50,7 +50,6 @@ service ranger-usersync start
 
 echo "******* enable HDFS plugin"
 
-
 # register ambari blueprint
 curl --silent --show-error -H "Content-Type: application/json" -X POST -d @/vagrant/create-repository-hdfs.json -u admin:admin $RANGER_API_URL
 
