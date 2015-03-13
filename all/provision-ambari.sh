@@ -10,6 +10,9 @@ wget -nv http://public-repo-1.hortonworks.com/ambari/centos6/1.x/updates/1.7.0/a
 echo "******* installing ambari-server and ambari-agent"
 yum install ambari-server ambari-agent -y -q
 
+echo '******* updating all libraries'
+yum update -y -q
+
 # update ambari agent config
 sed -i "s/^hostname=localhost/hostname=$1/g" /etc/ambari-agent/conf/ambari-agent.ini
 
