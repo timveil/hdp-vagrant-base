@@ -4,7 +4,7 @@ echo "******* JAVA_HOME = $JAVA_HOME"
 echo "******* HOSTNAME = $1"
 
 # download HDP repos
-wget -nv http://public-repo-1.hortonworks.com/ambari/centos6/1.x/updates/1.7.0/ambari.repo -O /etc/yum.repos.d/ambari.repo
+wget -nv http://repo.hdp.local/ambari/centos6/ambari.repo -O /etc/yum.repos.d/ambari.repo
 
 # install ambari server and agent
 echo "******* installing ambari-server and ambari-agent"
