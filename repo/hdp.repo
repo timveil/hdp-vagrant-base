@@ -1,6 +1,6 @@
-[HDP-2.2.0.0]
-name=Hortonworks Data Platform Version - HDP-2.2.0.0
-baseurl=http://repo.hdp.local/hdp/centos6/HDP-2.2.0.0
+[HDP-2.2.4.0]
+name=HDP Version - HDP-2.2.4.0
+baseurl=http://repo.hdp.local/hdp/centos6/HDP-2.2.4.0
 enabled=1
 priority=1
 gpgcheck=0

@@ -1,6 +1,6 @@
-[Updates-ambari-1.7.0]
-name=ambari-1.7.0 - Updates
-baseurl=http://repo.hdp.local/ambari/centos6/Updates-ambari-1.7.0
+[Updates-ambari-2.0.0]
+name=ambari-2.0.0 - Updates
+baseurl=http://repo.hdp.local/ambari/centos6/Updates-ambari-2.0.0
 enabled=1
 priority=1
 gpgcheck=0
