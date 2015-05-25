@@ -4,7 +4,7 @@
 $installJava = <<SCRIPT
 echo "******* installing java jdk"
 
-yum install java-1.7.0-openjdk-devel -y -q
+yum install java-1.7.0-openjdk-devel -y
 
 echo "******* exporting path variables"
 

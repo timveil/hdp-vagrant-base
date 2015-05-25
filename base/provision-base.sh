@@ -6,11 +6,11 @@ yum clean all
 
 # update all yum libraries
 echo '******* updating all libraries'
-yum update -y -q
+yum update -y
 
 # install & start ntp as required by HDP
 echo '******* installing ntp'
-yum install ntp lsof -y -q
+yum install ntp lsof -y
 hwclock --systohc
 service ntpd start
 chkconfig ntpd on
