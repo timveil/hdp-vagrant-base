@@ -1,3 +1,5 @@
+Please use this project instead for generating Vagrant files:  https://github.com/timveil/hdp-vagrant-generator
+
 # HDP Vagrant
 
 ## About
