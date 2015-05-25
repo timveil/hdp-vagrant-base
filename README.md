@@ -1,4 +1,7 @@
-Please use this project instead for generating Vagrant files:  https://github.com/timveil/hdp-vagrant-generator
+# Update
+
+**I am no longer actively maintaining this project.  Please use this project instead for generating Vagrant files:  https://github.com/timveil/hdp-vagrant-generator**
+
 
 # HDP Vagrant
 
