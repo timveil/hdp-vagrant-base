@@ -11,13 +11,12 @@ yum update -y
 # install & start ntp as required by HDP
 echo '******* installing ntp'
 yum install ntp lsof -y
-hwclock --systohc
-service ntpd start
-chkconfig ntpd on
+systemctl enable ntpd
 
-# disable iptables as required by HDP
-echo '******* disabling iptables'
-service iptables stop
+# disable firewalld as required by HDP
+echo '******* disabling firewalld'
+systemctl stop firewalld
+systemctl disable firewalld
 
 # disable transparent huge pages as required by HDP
 echo '******* disabling transparent huge pages'
