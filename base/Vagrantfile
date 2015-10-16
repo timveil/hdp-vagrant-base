@@ -8,7 +8,7 @@ yum install java-1.7.0-openjdk-devel -y
 
 echo "******* exporting path variables"
 
-echo "export JAVA_HOME=/usr/lib/jvm/java-1.7.0-openjdk" >> /home/vagrant/.bashrc
+echo "export JAVA_HOME=/usr/lib/jvm/jre-1.7.0" >> /home/vagrant/.bashrc
 echo "PATH=$JAVA_HOME/bin:$PATH" >> /home/vagrant/.bashrc
 SCRIPT
 
