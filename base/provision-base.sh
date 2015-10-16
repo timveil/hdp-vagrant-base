@@ -6,6 +6,7 @@ yum clean all
 
 # update all yum libraries
 echo '******* updating all libraries'
+yum makecache fast
 yum update -y
 
 # install & start ntp as required by HDP
