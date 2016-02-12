@@ -1,17 +1,31 @@
 #!/usr/bin/env bash
 
+# changing root password
+echo '******* changing root password'
+echo 'vagrant' | passwd --stdin
+
+# changing vagrant password
+echo '******* changing vagrant password'
+echo 'vagrant' | passwd --stdin vagrant
+
+# installing required libraries
+echo '******* installing required libraries'
+yum install ntp lsof unzip git deltarpm -y
+
+# enabling yum fastcache
+echo '******* enabling yum fastcache'
+yum makecache fast
+
 # clean yum
 echo '******* cleaning yum'
 yum clean all
 
 # update all yum libraries
 echo '******* updating all libraries'
-yum makecache fast
 yum update -y
 
-# install & start ntp as required by HDP
+# start ntp as required by HDP
 echo '******* installing ntp'
-yum install ntp lsof -y
 systemctl enable ntpd
 
 # disable firewalld as required by HDP
