@@ -14,6 +14,12 @@ mv /tmp/setJavaHome.sh /etc/profile.d/setJavaHome.sh
 
 chmod a+x /etc/profile.d/setJavaHome.sh
 
+source /etc/profile
+
+SCRIPT
+
+$applyJCE = <<SCRIPT
+
 sudo unzip -o -j -q /tmp/jce_policy-8.zip -d $JAVA_HOME/jre/lib/security/
 
 SCRIPT
@@ -38,5 +44,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision "file", source: "jce_policy-8.zip", destination: "/tmp/jce_policy-8.zip"
 
   config.vm.provision "updateJava", type:  "shell", inline: $updateJava
+
+  config.vm.provision "applyJCE", type:  "shell", inline: $applyJCE
 
 end
