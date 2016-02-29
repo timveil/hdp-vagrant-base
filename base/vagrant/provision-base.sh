@@ -10,7 +10,7 @@ echo 'vagrant' | passwd --stdin vagrant
 
 # installing required libraries
 echo '******* installing required libraries'
-yum install ntp lsof unzip git deltarpm -y
+yum install ntp lsof unzip git deltarpm openssl-devel -y
 
 # enabling yum fastcache
 echo '******* enabling yum fastcache'
@@ -26,6 +26,7 @@ yum update -y
 
 # start ntp as required by HDP
 echo '******* installing ntp'
+systemctl start ntpd
 systemctl enable ntpd
 
 # disable firewalld as required by HDP
