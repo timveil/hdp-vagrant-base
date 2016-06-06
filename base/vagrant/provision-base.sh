@@ -1,17 +1,24 @@
 #!/usr/bin/env bash
 
+# installing required libraries
+echo '******* installing required libraries'
+yum install ntp wget lsof unzip git openssl-devel -y
+
+# enabling yum fastcache
+echo '******* enabling yum fastcache'
+yum makecache fast
+
 # clean yum
 echo '******* cleaning yum'
 yum clean all
 
 # update all yum libraries
 echo '******* updating all libraries'
-yum makecache fast
 yum update -y
 
-# install & start ntp as required by HDP
+# start ntp as required by HDP
 echo '******* installing ntp'
-yum install ntp lsof -y
+systemctl start ntpd
 systemctl enable ntpd
 
 # disable firewalld as required by HDP

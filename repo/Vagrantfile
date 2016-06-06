@@ -14,7 +14,7 @@ EOF
 SCRIPT
 
 Vagrant.configure("2") do |config|
-  config.vm.box = "timveil/centos6.6-hdp-base"
+  config.vm.box = "centos/7"
 
   config.vm.box_check_update = true
 
