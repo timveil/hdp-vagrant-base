@@ -17,7 +17,7 @@ The box is based off of https://atlas.hashicorp.com/centos/boxes/7.  Additional 
 * disabling `transparent huge pages`
 * disabling `selinux`
 * updating timezone to New York
-* install Java 8 and set `JAVA_HOME`
+* install Java 8 (`java-1.8.0-openjdk-devel`) and set `JAVA_HOME`
 * apply JCE Policy
 
 To run, execute the following
