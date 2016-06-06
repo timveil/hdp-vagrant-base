@@ -1,16 +1,8 @@
 #!/usr/bin/env bash
 
-# changing root password
-echo '******* changing root password'
-echo 'vagrant' | passwd --stdin
-
-# changing vagrant password
-echo '******* changing vagrant password'
-echo 'vagrant' | passwd --stdin vagrant
-
 # installing required libraries
 echo '******* installing required libraries'
-yum install ntp lsof unzip git deltarpm openssl-devel -y
+yum install ntp wget lsof unzip git openssl-devel -y
 
 # enabling yum fastcache
 echo '******* enabling yum fastcache'
