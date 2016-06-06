@@ -33,6 +33,6 @@ vagrant init timveil/centos7-hdp-base; vagrant up --provider virtualbox
 
 ## Release Notes
 
-The latest release is `v1.0.7`.  For detailed released information see https://atlas.hashicorp.com/timveil/boxes/centos7-hdp-base
+The latest release is `v1.0.7`.  For detailed release information see https://atlas.hashicorp.com/timveil/boxes/centos7-hdp-base
 
 
