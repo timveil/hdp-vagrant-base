@@ -1,8 +1,11 @@
 # HDP Vagrant Base
 
-Base Vagrant box used by https://github.com/timveil/hdp-vagrant-generator.  For detailed released information see https://atlas.hashicorp.com/timveil/boxes/centos7-hdp-base
+## Overview
 
-The box is based off of https://atlas.hashicorp.com/centos/boxes/7.  Additional modifications include:
+This is a Vagrant box that can serve as a sensible base to install the Hortonworks Data Platform (HDP).  This box is based on Centos 7 (https://atlas.hashicorp.com/centos/boxes/7) and includes the below 
+ modifications, consistent with Hortonworks documentation (http://docs.hortonworks.com/)
+
+## Modifications
 
 * installation of the following packages
   * ntp
@@ -20,12 +23,16 @@ The box is based off of https://atlas.hashicorp.com/centos/boxes/7.  Additional 
 * install Java 8 (`java-1.8.0-openjdk-devel`) and set `JAVA_HOME`
 * apply JCE Policy
 
+## Usage
+
 To run, execute the following
 
 ```bash
 vagrant init timveil/centos7-hdp-base; vagrant up --provider virtualbox
 ```
 
+## Release Notes
 
+The latest release is `v1.0.7`.  For detailed released information see https://atlas.hashicorp.com/timveil/boxes/centos7-hdp-base
 
 
