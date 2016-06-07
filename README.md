@@ -14,6 +14,8 @@ This is a Vagrant box that can serve as a sensible base to install the Hortonwor
   * unzip
   * git
   * openssl-devel
+  * gcc (required for VirtualBox Guest Additions)
+  * kernel-devel (required for VirtualBox Guest Additions)
 * yum update and clean
 * enabling and starting `ntp`
 * disabling `firewalld`

@@ -2,7 +2,7 @@
 
 # installing required libraries
 echo '******* installing required libraries'
-yum install ntp wget lsof unzip git openssl-devel -y
+yum install ntp wget lsof unzip git openssl-devel gcc kernel-devel -y
 
 # enabling yum fastcache
 echo '******* enabling yum fastcache'
