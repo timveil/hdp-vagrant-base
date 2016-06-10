@@ -38,4 +38,25 @@ vagrant init timveil/centos7-hdp-base; vagrant up --provider virtualbox
 
 The latest release is `v1.0.7`.  For detailed release information see https://atlas.hashicorp.com/timveil/boxes/centos7-hdp-base
 
+## Development Notes
+
+Before packaging box, make sure to change both `vagrant` and `root` password to `vagrant`
+
+```bash
+sudo su -
+
+# change root password
+passwd 
+
+# change vagrant password
+passwd vagrant
+```
+
+To package and deploy see https://scotch.io/tutorials/how-to-create-a-vagrant-base-box-from-an-existing-one
+
+```bash
+vagrant package --output centos7-hdp-base.box
+vagrant box add centos7-hdp-base centos7-hdp-base.box --force
+```
+
 
