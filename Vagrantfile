@@ -1,29 +1,6 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-$installJava = <<SCRIPT
-echo "******* installing java jdk"
-
-yum install java-1.8.0-openjdk-devel -y
-
-SCRIPT
-
-$updateJava = <<SCRIPT
-
-mv /tmp/set-java-home.sh /etc/profile.d/set-java-home.sh
-
-chmod a+x /etc/profile.d/set-java-home.sh
-
-source /etc/profile
-
-SCRIPT
-
-$applyJCE = <<SCRIPT
-
-sudo unzip -o -j -q /tmp/jce_policy-8.zip -d $JAVA_HOME/jre/lib/security/
-
-SCRIPT
-
 Vagrant.configure("2") do |config|
   config.vm.box = "centos/7"
 
@@ -54,3 +31,26 @@ Vagrant.configure("2") do |config|
   end
 
 end
+
+$installJava = <<SCRIPT
+echo "******* installing java jdk"
+
+yum install java-1.8.0-openjdk-devel -y
+
+SCRIPT
+
+$updateJava = <<SCRIPT
+
+mv /tmp/set-java-home.sh /etc/profile.d/set-java-home.sh
+
+chmod a+x /etc/profile.d/set-java-home.sh
+
+source /etc/profile
+
+SCRIPT
+
+$applyJCE = <<SCRIPT
+
+sudo unzip -o -j -q /tmp/jce_policy-8.zip -d $JAVA_HOME/jre/lib/security/
+
+SCRIPT
