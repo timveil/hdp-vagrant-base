@@ -2,7 +2,7 @@
 
 # installing required libraries
 echo '******* installing required libraries'
-yum install ntp wget lsof unzip git openssl-devel gcc kernel-devel -y
+yum install scp curl unzip tar wget ntp openssl-devel gcc kernel-devel -y
 
 # enabling yum fastcache
 echo '******* enabling yum fastcache'
@@ -51,3 +51,9 @@ ln -s /usr/share/zoneinfo/America/New_York /etc/localtime
 
 echo '******* date after'
 date
+
+echo '******* update ulimit'
+ulimit -n 10000
+
+echo '******* update umask'
+echo umask 0022 >> /etc/profile

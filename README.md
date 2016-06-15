@@ -8,11 +8,12 @@ This is a Vagrant box that can serve as a sensible base to install the Hortonwor
 ## Modifications
 
 * installation of the following packages
-  * ntp
-  * wget
-  * lsof
+  * scp
+  * curl
   * unzip
-  * git
+  * tar
+  * wget
+  * ntp
   * openssl-devel
   * gcc (required for VirtualBox Guest Additions)
   * kernel-devel (required for VirtualBox Guest Additions)
@@ -23,8 +24,8 @@ This is a Vagrant box that can serve as a sensible base to install the Hortonwor
 * disabling `transparent huge pages`
 * disabling `selinux`
 * updating timezone to New York
-* install Java 8 (`java-1.8.0-openjdk-devel`) and set `JAVA_HOME`
-* apply JCE Policy
+* increasing `ulimit`
+* updating `umask`
 
 ## Usage
 
