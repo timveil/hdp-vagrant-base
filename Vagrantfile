@@ -4,15 +4,13 @@
 Vagrant.configure("2") do |config|
   config.vm.box = "centos/7"
 
-  config.vm.box_check_update = false
+  config.vm.box_check_update = true
 
   config.vbguest.auto_update = false
 
   config.vbguest.no_remote = true
 
   config.vbguest.no_install = true
-
-  config.vm.provision "installJava", type:  "shell", inline: $installJava
 
   config.vm.provision "base", type: "shell", path: "provision-base.sh"
 
