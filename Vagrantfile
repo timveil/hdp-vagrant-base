@@ -12,12 +12,14 @@ Vagrant.configure("2") do |config|
 
   config.vbguest.no_install = true
 
-  config.vm.provision "base", type: "shell", path: "provision-base.sh"
+  config.vm.network "private_network", type: "dhcp"
 
   config.vm.provider "virtualbox" do |v|
     v.memory = 2048
     v.cpus = 2
     v.name = 'base.hdp.local'
   end
+
+  config.vm.provision "base", type: "shell", path: "provision-base.sh"
 
 end
