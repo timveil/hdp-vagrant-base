@@ -57,3 +57,7 @@ ulimit -n 10000
 
 echo '******* update umask'
 echo umask 0022 >> /etc/profile
+
+# clean yum
+echo '******* cleaning yum'
+yum clean all
