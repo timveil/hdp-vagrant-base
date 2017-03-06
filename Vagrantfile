@@ -14,6 +14,9 @@ Vagrant.configure("2") do |config|
 
   config.vm.network "private_network", type: "dhcp"
 
+  # workaround for known issue #2 https://seven.centos.org/2016/12/updated-centos-vagrant-images-available-v1611-01/
+  config.vm.synced_folder ".", "/vagrant", disabled: true
+
   config.vm.provider "virtualbox" do |v|
     v.memory = 2048
     v.cpus = 2
