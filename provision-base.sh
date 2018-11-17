@@ -2,7 +2,11 @@
 
 # installing required libraries
 echo '******* installing required libraries'
-yum install scp curl unzip tar wget ntp openssl-devel gcc kernel-devel -y
+yum install scp curl unzip tar wget ntp openssl-devel gcc kernel-devel java-1.8.0-openjdk-devel.x86_64 -y
+
+# set JAVA_HOME
+echo '******* setting JAVA_HOME'
+echo "export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk" >> /etc/profile.d/java_env.sh
 
 # enabling yum fastcache
 echo '******* enabling yum fastcache'
@@ -61,3 +65,4 @@ echo umask 0022 >> /etc/profile
 # clean yum
 echo '******* cleaning yum'
 yum clean all
+rm -rf /var/cache/yum

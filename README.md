@@ -17,6 +17,8 @@ This is a Vagrant box that can serve as a sensible base to install the Hortonwor
   * openssl-devel
   * gcc (required for VirtualBox Guest Additions)
   * kernel-devel (required for VirtualBox Guest Additions)
+  * java-1.8.0-openjdk-devel.x86_64 (Java to be used by HDP, etc.)
+* set `JAVA_HOME`  
 * enabling yum `fastcache`
 * update all yum packages and clean yum history
 * enabling and starting `ntp`
@@ -32,12 +34,12 @@ This is a Vagrant box that can serve as a sensible base to install the Hortonwor
 To run, execute the following
 
 ```bash
-vagrant init timveil/centos7-hdp-base; vagrant up --provider virtualbox
+vagrant up --provider virtualbox
 ```
 
 ## Release Notes
 
-The latest release is `v1.0.14`.  For detailed release information see https://atlas.hashicorp.com/timveil/boxes/centos7-hdp-base
+The latest release is `v1.0.15`.  For detailed release information see https://app.vagrantup.com/timveil/boxes/centos7-hdp-base
 
 ## Development Notes
 
